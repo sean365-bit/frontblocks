@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+/* Mobile: 375px - Desktop: 1440px */
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include fontTheme(700, 24px, center);
+  display: flex;
+  flex-direction: column;
+  background: $rose50;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.desserts {
+  background-color: lightblue;
+
+  h1 {
+    color: $rose900;
+    text-align: left;
+  }
+}
+
+.menu_desserts {
+  @include flexCenter;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.dessert {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+}
+
+.cart {
+  background-color: lightcoral;
+}

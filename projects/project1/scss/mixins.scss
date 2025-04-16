@@ -1,0 +1,14 @@
+@mixin fontTheme($weight: 400, $size: 12px, $alignment: center) {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  text-align: $alignment;
+}
+
+@mixin flexCenter($content: center) {
+  display: flex;
+  justify-content: $content;
+  align-items: center;
+}

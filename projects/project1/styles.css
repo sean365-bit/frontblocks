@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+/* Mobile: 375px - Desktop: 1440px */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: hsl(20, 50%, 98%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.desserts {
+  background-color: lightblue;
+}
+.desserts h1 {
+  color: hsl(14, 65%, 9%);
+  text-align: left;
+}
+
+.menu_desserts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dessert {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+}
+
+.cart {
+  background-color: lightcoral;
+}
+
+/*# sourceMappingURL=styles.css.map */
