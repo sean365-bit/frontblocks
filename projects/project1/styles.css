@@ -20,12 +20,18 @@ body {
   padding: 20px;
 }
 
+.dessert_info, .dessert {
+  display: flex;
+  flex-direction: column;
+}
+
 .desserts {
-  background-color: lightblue;
+  border: 4px solid green;
 }
 .desserts h1 {
   color: hsl(14, 65%, 9%);
   text-align: left;
+  margin-bottom: 30px;
 }
 
 .menu_desserts {
@@ -33,17 +39,118 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .dessert {
-  height: 300px;
-  width: 300px;
-  border: 2px solid black;
+  width: 100%; /* */
 }
 
+.thumbnail {
+  height: 300px;
+  width: 100%;
+  background-image: url("/projects/project1/assets/images/image-waffle-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 15px;
+}
+
+.dessert_info {
+  align-items: flex-start;
+  gap: 5px;
+  height: 130px;
+  position: relative;
+}
+
+.dessert_name {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: hsl(7, 20%, 60%);
+  margin-top: 35px;
+}
+
+.dessert_description {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: hsl(14, 65%, 9%);
+}
+
+.dessert_price {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: hsl(14, 86%, 42%);
+}
+
+.add_button {
+  width: 60%;
+  height: 60px;
+  border: 1px solid hsl(12, 20%, 44%);
+  border-radius: 50px;
+  background-color: hsl(20, 50%, 98%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add_button:hover {
+  cursor: pointer;
+}
+
+.button_text {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  color: hsl(14, 65%, 9%);
+}
+
+.cart_icon {
+  background-image: url("/projects/project1/assets/images/icon-add-to-cart.svg");
+  width: 21px;
+  height: 20px;
+}
+
+/* */
 .cart {
   background-color: lightcoral;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: palevioletred;
+  }
+  .dessert {
+    border: 3px solid goldenrod;
+    width: 300px;
+  }
+  .menu_desserts {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background: palegreen;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

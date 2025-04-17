@@ -2,6 +2,7 @@
 /* Mobile: 375px - Desktop: 1440px */
 @import "variables";
 @import "mixins";
+@import "mediaqueries";
 
 * {
   margin: 0;
@@ -18,28 +19,122 @@ body {
   padding: 20px;
 }
 
+%flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
 .desserts {
-  background-color: lightblue;
+  border: 4px solid green;
 
   h1 {
     color: $rose900;
     text-align: left;
+    margin-bottom: 30px;
   }
 }
 
 .menu_desserts {
   @include flexCenter;
   flex-direction: column;
-
-  gap: 15px;
+  gap: 20px;
 }
 
 .dessert {
-  height: 300px;
-  width: 300px;
-  border: 2px solid black;
+  width: 100%; /* */
+  @extend %flex_column;
 }
 
+.thumbnail {
+  height: 300px;
+  width: 100%;
+
+  background-image: url("/projects/project1/assets/images/image-waffle-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 15px;
+}
+
+.dessert_info {
+  @extend %flex_column;
+  align-items: flex-start;
+  gap: 5px;
+  height: 130px;
+  position: relative;
+}
+
+.dessert_name {
+  @include fontTheme($weight: 500, $size: 16px, $alignment: center);
+  color: $rose400;
+  margin-top: 35px;
+}
+
+.dessert_description {
+  @include fontTheme($weight: 700, $size: 18px, $alignment: center);
+  color: $rose900;
+}
+
+.dessert_price {
+  @include fontTheme($weight: 700, $size: 18px, $alignment: center);
+  color: $red;
+}
+
+.add_button {
+  width: 60%;
+  height: 60px;
+  border: 1px solid $rose500;
+  border-radius: 50px;
+  background-color: $rose50;
+
+  @include flexCenter;
+  gap: 15px;
+
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button_text {
+  @include fontTheme($weight: 700, $size: 16px, $alignment: center);
+  color: $rose900;
+}
+
+.cart_icon {
+  background-image: url("/projects/project1/assets/images/icon-add-to-cart.svg");
+
+  width: 21px;
+  height: 20px;
+}
+
+/* */
 .cart {
   background-color: lightcoral;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: palevioletred;
+  }
+
+  .dessert {
+    border: 3px solid goldenrod;
+    width: 300px;
+  }
+
+  .menu_desserts {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background: palegreen;
+  }
 }
