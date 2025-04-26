@@ -56,7 +56,9 @@ function createDessertCard(item) {
       <p class="dessert_description">${item.category}</p>
       <p class="dessert_price">$${item.price.toFixed(2)}</p>
       <div class="add_button" role="button" tabindex="0">
-        <div class="cart_icon"></div>
+        
+        <img src="./assets/images/icon-add-to-cart.svg" alt="" class="cart_icon" />
+      
         <div class="button_text">Add to Cart</div>
       </div>
     </div>`;
