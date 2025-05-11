@@ -1,4 +1,4 @@
-console.log("This is project 1");
+console.log("This is project 1, this was developed by sean365-bit");
 
 fetchData();
 
@@ -66,16 +66,23 @@ function updateCartUI() {
 
   if (cart.length === 0) {
     emptyCartText.style.display = "block";
+
+    cartDetails.innerHTML = `
+    <img
+      class="empty_cart_img"
+      src="./assets/images/illustration-empty-cart.svg"
+      alt="items in the cart"
+    />
+  `;
     return;
   }
 
   emptyCartText.style.display = "none";
 
-  cart.forEach((item) => {
+  cart.forEach((item, index) => {
     const div = document.createElement("div");
-    div.classList.add("cart_item"); // in js
+    div.classList.add("cart_item");
     div.innerHTML = `
-    
     <div class="open">
       <div class="item_name">${item.name}</div>
       <div class="prices">
@@ -92,10 +99,16 @@ function updateCartUI() {
         src="./assets/images/icon-remove-item.svg"
         alt="remove item"
       />
-    </div>   
- 
-     
+    </div>        
     `;
+
+    // Add click handler to remove icon
+    const removeIcon = div.querySelector(".remove_icon");
+    removeIcon.addEventListener("click", () => {
+      cart.splice(index, 1); // Remove this item from cart
+      updateCartUI(); // Refresh the cart display
+    });
+
     cartDetails.appendChild(div);
   });
 
@@ -119,7 +132,57 @@ function updateCartUI() {
   `;
 
   cartDetails.appendChild(total);
+  /* */
+  const confirmButton = total.querySelector(".button");
+
+  confirmButton.addEventListener("click", () => {
+    const modalCartSummary = document.getElementById("modalCartSummary");
+    modalCartSummary.innerHTML = ""; // clear previous content
+
+    cart.forEach((item) => {
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("cart_item");
+      itemDiv.innerHTML = `
+      <div class="item_name">${item.name}</div>
+      <div class="prices">
+        <div class="quantity">${item.quantity}x</div>
+        <div class="price">@ $${item.price.toFixed(2)}</div>
+        <div class="sum_of_prices">$${(item.price * item.quantity).toFixed(
+          2
+        )}</div>
+      </div>
+    `;
+      modalCartSummary.appendChild(itemDiv);
+    });
+
+    // Optionally include total
+    const totalPrice = cart.reduce(
+      (sum, item) => sum + item.quantity * item.price,
+      0
+    );
+
+    const totalDiv = document.createElement("div");
+    totalDiv.classList.add("cart_total");
+    totalDiv.innerHTML = `
+    <hr />
+    <div class="order">
+      <strong>Total:</strong> $${totalPrice.toFixed(2)}
+    </div>
+  `;
+    modalCartSummary.appendChild(totalDiv);
+
+    // Show the modal
+    document.getElementById("confirmationModal").style.display = "block";
+  });
 }
+/* */
+
+document.getElementById("newOrderButton").addEventListener("click", () => {
+  cart.length = 0; // clear cart
+  updateCartUI(); // re-render the empty cart
+  document.getElementById("confirmationModal").style.display = "none";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 function createDessertCard(item) {
   return `

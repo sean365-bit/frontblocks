@@ -170,7 +170,7 @@ body {
 }
 
 /* */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1020px) {
   body {
     flex-direction: row;
   }
@@ -295,8 +295,12 @@ body {
 }
 
 .remove_icon {
-  height: 10px;
-  width: 10px;
+  border: 1px solid hsl(7, 20%, 60%);
+  border-radius: 50%;
+  padding: 10px;
+}
+.remove_icon:hover {
+  cursor: pointer;
 }
 
 .delivery_type {
@@ -343,7 +347,78 @@ body {
   border: none;
   border-radius: 15px;
   color: hsl(20, 50%, 98%);
-  background-color: hsl(14, 86%, 42%);
+  background: hsl(14, 86%, 42%);
+  transition: 0.3s;
+}
+.button:hover {
+  cursor: pointer;
+  background: hsl(14, 86%, 32%);
+}
+
+/* */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal_content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 15px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal_content img {
+  height: 45px;
+  width: 45px;
+  margin-bottom: 20px;
+}
+
+.order_confirmation {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: left;
+}
+
+.confirmation_p {
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+  color: hsl(7, 20%, 60%);
+}
+
+/* */
+#modalCartSummary {
+  margin-top: 15px;
+  text-align: left;
+}
+
+#modalCartSummary .cart_item {
+  margin-bottom: 10px;
+}
+
+#modalCartSummary .prices {
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
