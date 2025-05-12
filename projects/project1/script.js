@@ -142,15 +142,30 @@ function updateCartUI() {
     cart.forEach((item) => {
       const itemDiv = document.createElement("div");
       itemDiv.classList.add("cart_item");
-      itemDiv.innerHTML = `
-      <div class="item_name">${item.name}</div>
-      <div class="prices">
-        <div class="quantity">${item.quantity}x</div>
-        <div class="price">@ $${item.price.toFixed(2)}</div>
-        <div class="sum_of_prices">$${(item.price * item.quantity).toFixed(
-          2
-        )}</div>
+      itemDiv.innerHTML = `     
+      <div class="confirmation_item">
+      <img
+        src="${item.image.thumbnail}"
+        alt="Image of ${item.name}"
+        class="thumbnail_confirm"
+        loading="lazy"
+      />
+
+      <div class="confirm_details">
+        <div class="item_name">${item.name}</div>
+
+        <div class="confirm_quantity">
+          <div class="quantity">${item.quantity}x</div>
+          <div class="price">@ $${item.price.toFixed(2)}</div>
+        </div>
       </div>
+    </div>
+
+    <div class="confirm_price">
+      <div class="sum_of_prices">
+        $${(item.price * item.quantity).toFixed(2)}
+      </div>
+    </div>     
     `;
       modalCartSummary.appendChild(itemDiv);
     });
@@ -164,9 +179,9 @@ function updateCartUI() {
     const totalDiv = document.createElement("div");
     totalDiv.classList.add("cart_total");
     totalDiv.innerHTML = `
-    <hr />
-    <div class="order">
-      <strong>Total:</strong> $${totalPrice.toFixed(2)}
+     <div class="order">
+      <div class="order_total">Order Total</div>
+      <div>$${totalPrice.toFixed(2)}</div>
     </div>
   `;
     modalCartSummary.appendChild(totalDiv);
