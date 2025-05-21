@@ -35,13 +35,10 @@ body {
 }
 
 .dessert {
-  width: 100%; /* */
-
+  width: 100%;
   @include flexCenter;
   flex-direction: column;
   gap: 40px;
-
-  border: 1px solid green;
 }
 
 .thumbnail {
@@ -83,7 +80,6 @@ body {
 
   @include flexCenter;
   gap: 5px;
-
   position: absolute;
   top: -10px;
   left: 50%;
@@ -106,7 +102,6 @@ body {
 
 .cart {
   background: $rose50;
-  border: 1px solid black;
   border-radius: 15px;
   padding: 20px;
 }
@@ -120,7 +115,6 @@ body {
 .cart_details {
   width: 100%;
   margin-bottom: 25px;
-  border: 1px solid purple;
 
   .empty_cart_img {
     width: 90%;
@@ -133,9 +127,6 @@ body {
   color: $rose500;
 }
 
-/* Previous MQ */
-
-/* style.css */
 .cart_item {
   width: 100%;
   display: flex;
