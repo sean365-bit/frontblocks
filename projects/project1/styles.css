@@ -52,6 +52,10 @@ body {
   border-radius: 15px;
 }
 
+.thumbnail_selected {
+  border: 3px solid hsl(14, 86%, 42%);
+}
+
 .dessert_info {
   align-items: flex-start;
   gap: 5px;
@@ -91,7 +95,7 @@ body {
 }
 
 .add_button {
-  width: 60%;
+  width: 75%;
   height: 50px;
   border: 1px solid hsl(12, 20%, 44%);
   border-radius: 50px;
@@ -104,12 +108,7 @@ body {
   top: -10px;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.add_button:hover {
-  cursor: pointer;
-}
-
-.button_text {
+  transition: 0.3s;
   font-family: "Red Hat Text", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -117,6 +116,11 @@ body {
   font-size: 16px;
   text-align: center;
   color: hsl(14, 65%, 9%);
+}
+.add_button:hover {
+  cursor: pointer;
+  border: 1px solid hsl(14, 86%, 42%);
+  color: hsl(14, 86%, 42%);
 }
 
 .cart_icon {

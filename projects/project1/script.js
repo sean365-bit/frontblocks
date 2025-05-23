@@ -19,6 +19,7 @@ async function fetchData() {
   }
 }
 
+// start
 function renderDesserts(desserts) {
   container.innerHTML = "";
   const fragment = document.createDocumentFragment();
@@ -28,7 +29,10 @@ function renderDesserts(desserts) {
     card.classList.add("box");
     card.innerHTML = createDessertCard(item);
 
-    card.querySelector(".add_button").addEventListener("click", () => {
+    const button = card.querySelector(".add_button");
+    const thumbnail = card.querySelector(".thumbnail");
+
+    button.addEventListener("click", () => {
       console.log(`Added ${item.name} to cart`);
 
       const existingItem = cart.find((cartItem) => cartItem.name === item.name);
@@ -36,6 +40,11 @@ function renderDesserts(desserts) {
         existingItem.quantity += 1;
       } else {
         cart.push({ ...item, quantity: 1 });
+      }
+
+      // Add selected border to image
+      if (thumbnail) {
+        thumbnail.classList.add("thumbnail_selected");
       }
 
       updateCartUI();
@@ -46,6 +55,7 @@ function renderDesserts(desserts) {
 
   container.appendChild(fragment);
 }
+// end
 
 function updateCartUI() {
   const cartCount = document.querySelector(".cart_count");
@@ -105,8 +115,13 @@ function updateCartUI() {
     // Add click handler to remove icon
     const removeIcon = div.querySelector(".remove_icon");
     removeIcon.addEventListener("click", () => {
-      cart.splice(index, 1); // Remove this item from cart
-      updateCartUI(); // Refresh the cart display
+      // Remove this item from cart
+      cart.splice(index, 1);
+
+      // remove border
+      removeBorder(item.name);
+      // Refresh the cart display
+      updateCartUI();
     });
 
     cartDetails.appendChild(div);
@@ -168,6 +183,7 @@ function updateCartUI() {
     </div>     
     `;
       modalCartSummary.appendChild(itemDiv);
+      removeBorder(item.name);
     });
 
     // Optionally include total
@@ -190,7 +206,20 @@ function updateCartUI() {
     document.getElementById("confirmationModal").style.display = "block";
   });
 }
-/* */
+
+function removeBorder(tobeDeleted) {
+  // Remove the 'thumbnail_selected' class from the corresponding image
+  const allDessertCards = document.querySelectorAll(".box");
+
+  allDessertCards.forEach((card) => {
+    const nameEl = card.querySelector(".dessert_name"); // Adjust selector based on your HTML
+    const thumbnail = card.querySelector(".thumbnail");
+
+    if (nameEl && nameEl.textContent === tobeDeleted && thumbnail) {
+      thumbnail.classList.remove("thumbnail_selected");
+    }
+  });
+}
 
 document.getElementById("newOrderButton").addEventListener("click", () => {
   cart.length = 0; // clear cart
@@ -222,7 +251,7 @@ function createDessertCard(item) {
             class="cart_icon"
           />
 
-          <div class="button_text">Add to Cart</div>
+          <div>Add to Cart</div>
         </div>
       </div>`;
 }

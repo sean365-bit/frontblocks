@@ -47,6 +47,10 @@ body {
   border-radius: 15px;
 }
 
+.thumbnail_selected {
+  border: 3px solid $red;
+}
+
 .dessert_info {
   @extend %flex_column;
   align-items: flex-start;
@@ -72,7 +76,7 @@ body {
 }
 
 .add_button {
-  width: 60%;
+  width: 75%;
   height: 50px;
   border: 1px solid $rose500;
   border-radius: 50px;
@@ -84,15 +88,16 @@ body {
   top: -10px;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.3s;
+
+  @include fontTheme($weight: 700, $size: 16px, $alignment: center);
+  color: $rose900;
 
   &:hover {
     cursor: pointer;
+    border: 1px solid $red;
+    color: $red;
   }
-}
-
-.button_text {
-  @include fontTheme($weight: 700, $size: 16px, $alignment: center);
-  color: $rose900;
 }
 
 .cart_icon {
