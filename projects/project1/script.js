@@ -19,45 +19,105 @@ async function fetchData() {
   }
 }
 
-// start
-function renderDesserts(desserts) {
-  container.innerHTML = "";
-  const fragment = document.createDocumentFragment();
+const createDessertCard = function (item) {
+  return `
+  <picture>
+      <source media="(min-width: 1200px)" srcset="${item.image.desktop}" />
+      <source media="(min-width: 768px)" srcset="${item.image.tablet}" />
+      <img
+        src="${item.image.mobile}"
+        alt="Image of ${item.name}"
+        class="thumbnail"
+        loading="lazy"
+      />
+    </picture>
+    <div class="dessert_info">
+      <h2 class="dessert_name">${item.name}</h2>
+      <p class="dessert_description">${item.category}</p>
+      <p class="dessert_price">$${item.price.toFixed(2)}</p>
+      <div class="add_button" role="button" tabindex="0">
+        <img
+          src="./assets/images/icon-add-to-cart.svg"
+          alt="add to cart"
+          class="cart_icon"
+        />
 
-  desserts.forEach((item) => {
-    const card = document.createElement("div");
-    card.classList.add("box");
-    card.innerHTML = createDessertCard(item);
+        <div>Add to Cart</div>
+      </div>
+    </div>    
+  `;
+};
 
-    const button = card.querySelector(".add_button");
-    const thumbnail = card.querySelector(".thumbnail");
+const createCartItem = function (item) {
+  return `
+    <div class="open">
+      <div class="item_name">${item.name}</div>
+      <div class="prices">
+        <div class="quantity">${item.quantity}x</div>
+        <div class="price">@ ${item.price.toFixed(2)}</div>
+        <div class="sum_of_prices">
+          $${(item.price * item.quantity).toFixed(2)}
+        </div>
+      </div>
+    </div>
+    <div class="exit">
+      <img
+        class="remove_icon"
+        src="./assets/images/icon-remove-item.svg"
+        alt="remove item"
+      />
+    </div>        
+    `;
+};
 
-    button.addEventListener("click", () => {
-      console.log(`Added ${item.name} to cart`);
+const createCartTotal = function (totalPrice) {
+  return `
+  <div class="order">
+      <div class="order_total">Order Total</div>
+      <div>$${totalPrice.toFixed(2)}</div>
+    </div>
+    <div class="delivery_type">
+      <img
+        class="carbon_neutral_img"
+        src="./assets/images/icon-carbon-neutral.svg"
+        alt="carbon neutral image"
+      />
+      <div>This is a <span class="remark">carbon-neutral</span> delivery</div>
+    </div>
+    <button class="button">Confirm Order</button>
+  `;
+};
 
-      const existingItem = cart.find((cartItem) => cartItem.name === item.name);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ ...item, quantity: 1 });
-      }
+const createCartConfirmation = function (item) {
+  return `     
+      <div class="confirmation_item">
+      <img
+        src="${item.image.thumbnail}"
+        alt="Image of ${item.name}"
+        class="thumbnail_confirm"
+        loading="lazy"
+      />
 
-      // Add selected border to image
-      if (thumbnail) {
-        thumbnail.classList.add("thumbnail_selected");
-      }
+      <div class="confirm_details">
+        <div class="item_name">${item.name}</div>
 
-      updateCartUI();
-    });
+        <div class="confirm_quantity">
+          <div class="quantity">${item.quantity}x</div>
+          <div class="price">@ $${item.price.toFixed(2)}</div>
+        </div>
+      </div>
+    </div>
 
-    fragment.appendChild(card);
-  });
+    <div class="confirm_price">
+      <div class="sum_of_prices">
+        $${(item.price * item.quantity).toFixed(2)}
+      </div>
+    </div>     
+    `;
+};
 
-  container.appendChild(fragment);
-}
-// end
-
-function updateCartUI() {
+// updateCartUI Start
+const updateCartUI = function () {
   const cartCount = document.querySelector(".cart_count");
   const cartDetails = document.querySelector(".cart_details");
   const emptyCartText = document.querySelector(".empty_cart_p");
@@ -92,25 +152,7 @@ function updateCartUI() {
   cart.forEach((item, index) => {
     const div = document.createElement("div");
     div.classList.add("cart_item");
-    div.innerHTML = `
-    <div class="open">
-      <div class="item_name">${item.name}</div>
-      <div class="prices">
-        <div class="quantity">${item.quantity}x</div>
-        <div class="price">@ ${item.price.toFixed(2)}</div>
-        <div class="sum_of_prices">
-          $${(item.price * item.quantity).toFixed(2)}
-        </div>
-      </div>
-    </div>
-    <div class="exit">
-      <img
-        class="remove_icon"
-        src="./assets/images/icon-remove-item.svg"
-        alt="remove item"
-      />
-    </div>        
-    `;
+    div.innerHTML = createCartItem(item);
 
     // Add click handler to remove icon
     const removeIcon = div.querySelector(".remove_icon");
@@ -130,22 +172,7 @@ function updateCartUI() {
   // Add total price
   const total = document.createElement("div");
   total.classList.add("cart_total");
-  total.innerHTML = `
-  <div class="order">
-      <div class="order_total">Order Total</div>
-      <div>$${totalPrice.toFixed(2)}</div>
-    </div>
-    <div class="delivery_type">
-      <img
-        class="carbon_neutral_img"
-        src="./assets/images/icon-carbon-neutral.svg"
-        alt="carbon neutral image"
-      />
-      <div>This is a <span class="remark">carbon-neutral</span> delivery</div>
-    </div>
-    <button class="button">Confirm Order</button>
-  `;
-
+  total.innerHTML = createCartTotal(totalPrice);
   cartDetails.appendChild(total);
   /* */
   const confirmButton = total.querySelector(".button");
@@ -157,31 +184,7 @@ function updateCartUI() {
     cart.forEach((item) => {
       const itemDiv = document.createElement("div");
       itemDiv.classList.add("cart_item");
-      itemDiv.innerHTML = `     
-      <div class="confirmation_item">
-      <img
-        src="${item.image.thumbnail}"
-        alt="Image of ${item.name}"
-        class="thumbnail_confirm"
-        loading="lazy"
-      />
-
-      <div class="confirm_details">
-        <div class="item_name">${item.name}</div>
-
-        <div class="confirm_quantity">
-          <div class="quantity">${item.quantity}x</div>
-          <div class="price">@ $${item.price.toFixed(2)}</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="confirm_price">
-      <div class="sum_of_prices">
-        $${(item.price * item.quantity).toFixed(2)}
-      </div>
-    </div>     
-    `;
+      itemDiv.innerHTML = createCartConfirmation(item);
       modalCartSummary.appendChild(itemDiv);
       removeBorder(item.name);
     });
@@ -205,14 +208,54 @@ function updateCartUI() {
     // Show the modal
     document.getElementById("confirmationModal").style.display = "block";
   });
+};
+// updateCartUI end
+
+const addToCartButton = function (button, thumbnail, item) {
+  button.addEventListener("click", () => {
+    console.log(`Added ${item.name} to cart`);
+
+    const existingItem = cart.find((cartItem) => cartItem.name === item.name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ ...item, quantity: 1 });
+    }
+
+    // Add selected border to image
+    if (thumbnail) {
+      thumbnail.classList.add("thumbnail_selected");
+    }
+
+    updateCartUI();
+  });
+};
+
+// start
+function renderDesserts(desserts) {
+  container.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+
+  desserts.forEach((item) => {
+    const card = document.createElement("div");
+    card.classList.add("box");
+    card.innerHTML = createDessertCard(item);
+    const button = card.querySelector(".add_button");
+    const thumbnail = card.querySelector(".thumbnail");
+
+    addToCartButton(button, thumbnail, item);
+    fragment.appendChild(card);
+  });
+
+  container.appendChild(fragment);
 }
+// end
 
 function removeBorder(tobeDeleted) {
-  // Remove the 'thumbnail_selected' class from the corresponding image
   const allDessertCards = document.querySelectorAll(".box");
 
   allDessertCards.forEach((card) => {
-    const nameEl = card.querySelector(".dessert_name"); // Adjust selector based on your HTML
+    const nameEl = card.querySelector(".dessert_name");
     const thumbnail = card.querySelector(".thumbnail");
 
     if (nameEl && nameEl.textContent === tobeDeleted && thumbnail) {
@@ -222,36 +265,8 @@ function removeBorder(tobeDeleted) {
 }
 
 document.getElementById("newOrderButton").addEventListener("click", () => {
-  cart.length = 0; // clear cart
-  updateCartUI(); // re-render the empty cart
+  cart.length = 0;
+  updateCartUI();
   document.getElementById("confirmationModal").style.display = "none";
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-function createDessertCard(item) {
-  return `
-    <picture>
-      <source media="(min-width: 1200px)" srcset="${item.image.desktop}" />
-      <source media="(min-width: 768px)" srcset="${item.image.tablet}" />
-      <img
-        src="${item.image.mobile}"
-        alt="Image of ${item.name}"
-        class="thumbnail"
-        loading="lazy"
-      />
-    </picture>
-    <div class="dessert_info">
-        <h2 class="dessert_name">${item.name}</h2>
-        <p class="dessert_description">${item.category}</p>
-        <p class="dessert_price">$${item.price.toFixed(2)}</p>
-        <div class="add_button" role="button" tabindex="0">
-          <img
-            src="./assets/images/icon-add-to-cart.svg"
-            alt="add to cart"
-            class="cart_icon"
-          />
-
-          <div>Add to Cart</div>
-        </div>
-      </div>`;
-}
