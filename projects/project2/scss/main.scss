@@ -1,0 +1,96 @@
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+ These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+- Font size (quote): 28px
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+// Variables
+$blue200: hsl(193, 38%, 86%);
+$green300: hsl(150, 100%, 66%);
+$blue600: hsl(217, 19%, 38%);
+$blue900: hsl(217, 19%, 24%);
+$blue950: hsl(218, 23%, 16%);
+
+// Mixins
+@mixin flexCenter($content: center) {
+  display: flex;
+  justify-content: $content;
+  align-items: center;
+}
+
+@mixin fontTheme($weight: 400, $size: 12px, $alignment: center) {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  text-align: $alignment;
+}
+// Mixins
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: $blue950;
+
+  @include flexCenter(center);
+  min-height: 100vh;
+}
+
+.container {
+  background: $blue900;
+  border-radius: 15px;
+  height: 350px;
+  width: 350px;
+  padding: 20px;
+
+  @extend %flex;
+  flex-direction: column;
+  gap: 20px;
+
+  position: relative;
+}
+
+.advice_number {
+  color: $green300;
+  @include fontTheme(800, 12px, center);
+  text-transform: uppercase;
+}
+
+.advice_text {
+  color: $blue200;
+  @include fontTheme(800, 28px, center);
+}
+
+.pause {
+  width: 100%;
+  height: auto;
+  @extend %flex;
+}
+
+.dice {
+  @extend %flex;
+  height: 75px;
+  width: 75px;
+
+  border: 3px solid $green300;
+  border-radius: 50%;
+
+  background-color: $green300;
+  position: absolute;
+
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
