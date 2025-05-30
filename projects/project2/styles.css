@@ -66,9 +66,11 @@ body {
   bottom: -20%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.3s;
 }
 .dice:hover {
   cursor: pointer;
+  box-shadow: 0 0 45px hsl(150, 90%, 66%);
 }
 
 /*# sourceMappingURL=styles.css.map */
