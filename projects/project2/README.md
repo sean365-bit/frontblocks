@@ -1,4 +1,4 @@
-# Frontend Mentor - Advice generator app solution
+# Advice generator app solution
 
 This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
@@ -23,12 +23,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./assets/pj2.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Check out my code solution](https://github.com/sean365-bit/frontblocks/tree/main/projects/project2)
+- Live Site URL: [Check out the live site](https://sean365-bit.github.io/frontblocks/projects/project2/)
 
 ## My process
 
@@ -37,5 +37,4 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow

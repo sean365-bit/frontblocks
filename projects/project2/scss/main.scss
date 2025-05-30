@@ -1,10 +1,3 @@
-/* 
-- Mobile: 375px
-- Desktop: 1440px
- These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
-- Font size (quote): 28px
-*/
-
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 // Variables
@@ -62,11 +55,13 @@ body {
   color: $green300;
   @include fontTheme(800, 12px, center);
   text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .advice_text {
   color: $blue200;
-  @include fontTheme(800, 28px, center);
+  @include fontTheme(800, 26px, center);
+  margin-bottom: 10px;
 }
 
 .pause {
@@ -77,8 +72,8 @@ body {
 
 .dice {
   @extend %flex;
-  height: 75px;
-  width: 75px;
+  height: 80px;
+  width: 80px;
 
   border: 3px solid $green300;
   border-radius: 50%;
@@ -90,9 +85,21 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.3s;
-
+  padding: 0;
   &:hover {
     cursor: pointer;
     box-shadow: 0 0 45px hsl(150, 90%, 66%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: 350px;
+    width: 500px;
+  }
+
+  .advice_text {
+    color: $blue200;
+    @include fontTheme(800, 28px, center);
   }
 }

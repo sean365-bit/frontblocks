@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Advice generator app" />
+    <meta name="keywords" content="Advice, Advice generator, Motivation" />
     <title>Advice generator app</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -10,15 +12,21 @@
     <div class="container">
       <div class="advice_number"></div>
 
-      <div class="advice_text"></div>
+      <q class="advice_text"></q>
 
       <div class="pause">
-        <img src="./assets/pattern-divider-mobile.svg" alt="icon divider" />
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="./assets/pattern-divider-desktop.svg"
+          />
+          <img src="./assets/pattern-divider-mobile.svg" alt="icon divider" />
+        </picture>
       </div>
 
-      <div class="dice">
+      <button class="dice">
         <img src="./assets/icon-dice.svg" alt="icon dice" />
-      </div>
+      </button>
     </div>
 
     <script src="./script.js"></script>

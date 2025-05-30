@@ -1,9 +1,3 @@
-/* 
-- Mobile: 375px
-- Desktop: 1440px
- These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
-- Font size (quote): 28px
-*/
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 .dice, .pause, .container {
   display: flex;
@@ -39,6 +33,7 @@ body {
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .advice_text {
@@ -47,8 +42,9 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 800;
-  font-size: 28px;
+  font-size: 26px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .pause {
@@ -57,8 +53,8 @@ body {
 }
 
 .dice {
-  height: 75px;
-  width: 75px;
+  height: 80px;
+  width: 80px;
   border: 3px solid hsl(150, 100%, 66%);
   border-radius: 50%;
   background-color: hsl(150, 100%, 66%);
@@ -67,10 +63,27 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.3s;
+  padding: 0;
 }
 .dice:hover {
   cursor: pointer;
   box-shadow: 0 0 45px hsl(150, 90%, 66%);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: 350px;
+    width: 500px;
+  }
+  .advice_text {
+    color: hsl(193, 38%, 86%);
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
