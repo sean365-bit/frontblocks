@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*
+- Mobile: 375px
+- Desktop: 1440px
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+// <weight>: Use a value from 300 to 900
+*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+body {
+  background: hsl(226, 43%, 10%);
+}
+
+/*# sourceMappingURL=styles.css.map */
