@@ -7,8 +7,229 @@
 // <weight>: Use a value from 300 to 900
 */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+.card, .card_container, .img_container, .perfil, main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   background: hsl(226, 43%, 10%);
 }
+
+/* */
+main {
+  flex-direction: column;
+}
+
+/* card */
+.panel_control {
+  height: 250px;
+  width: 350px;
+  /* */
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.perfil {
+  height: 60%;
+  background: hsl(246, 80%, 60%);
+  color: hsl(236, 100%, 87%);
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.period {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  height: 40%;
+  background: hsl(235, 46%, 20%);
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20px;
+}
+
+/* card */
+.img_container {
+  flex: 1;
+}
+
+.perfil_img {
+  height: 85px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.perfil_info {
+  flex: 2;
+}
+
+.report {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.name {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: left;
+}
+
+/*
+.period {
+  height: 50%;
+  background: $Navy900;
+
+  display: flex;
+  justify-content: space-around;
+}
+*/
+.period_selection {
+  margin-top: 35px; /* */
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  color: hsl(235, 45%, 61%);
+  transition: 0.3s;
+}
+.period_selection:hover {
+  cursor: pointer;
+  color: hsl(236, 100%, 87%);
+}
+
+/* to be discard */
+.card_container {
+  flex-direction: column;
+  gap: 25px;
+}
+
+.track {
+  height: 250px;
+  width: 350px;
+  position: relative;
+}
+
+.card_img {
+  height: 30%;
+  border-radius: 20px;
+}
+
+.card {
+  height: 70%;
+  width: 100%;
+  background: hsl(235, 46%, 20%);
+  border-radius: 20px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* */
+}
+
+.previous {
+  border: 3px solid wheat;
+  flex: 1;
+}
+
+.current {
+  border: 3px solid red;
+  flex: 1;
+}
+
+#work {
+  background: hsl(15, 100%, 70%);
+}
+
+#play {
+  background: hsl(195, 74%, 62%);
+}
+
+#study {
+  background: hsl(348, 100%, 68%);
+}
+
+#exercise {
+  background: hsl(145, 58%, 55%);
+}
+
+#social {
+  background: hsl(264, 64%, 52%);
+}
+
+#self_care {
+  background: hsl(43, 84%, 65%);
+}
+
+.ellipsis {
+  height: 8px;
+}
+
+/*   */
+.title {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: left;
+  color: white;
+}
+
+.current_period {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: left;
+  color: white;
+}
+
+.previous_period {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
+
+/* MQ */
+/*
+
+@media screen and (min-width: 600px) {
+  .perfil {
+    background: red;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .perfil {
+    background: yellow;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .perfil {
+    background: goldenrod;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .perfil {
+    background: wheat;
+  }
+}
+*/
 
 /*# sourceMappingURL=styles.css.map */

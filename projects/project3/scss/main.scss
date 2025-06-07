@@ -39,3 +39,211 @@ $Navy200: hsl(236, 100%, 87%);
 body {
   background: $Navy950;
 }
+
+/* */
+main {
+  @extend %flex;
+  flex-direction: column;
+}
+
+/* card */
+.panel_control {
+  height: 250px;
+  width: 350px;
+
+  /* */
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  position: relative;
+}
+
+.perfil {
+  height: 60%;
+
+  background: $Purple600;
+
+  @extend %flex;
+  color: $Navy200;
+
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.period {
+  position: absolute;
+
+  bottom: 20px;
+
+  width: 100%;
+  height: 40%;
+  background: $Navy900;
+
+  display: flex;
+  justify-content: space-around;
+
+  border-radius: 20px;
+}
+/* card */
+
+.img_container {
+  flex: 1;
+
+  @extend %flex;
+}
+
+.perfil_img {
+  height: 85px;
+
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.perfil_info {
+  flex: 2;
+}
+
+.report {
+  @include fontTheme($weight: 400, $size: 14px, $alignment: left);
+
+  margin-bottom: 5px;
+}
+
+.name {
+  @include fontTheme($weight: 400, $size: 24px, $alignment: left);
+}
+
+/*
+.period {
+  height: 50%;
+  background: $Navy900;
+
+  display: flex;
+  justify-content: space-around;
+}
+*/
+
+.period_selection {
+  margin-top: 35px; /* */
+  @include fontTheme($weight: 400, $size: 22px, $alignment: center);
+
+  color: $Purple500;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: $Navy200;
+  }
+}
+
+/* to be discard */
+.card_container {
+  @extend %flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.track {
+  height: 250px;
+  width: 350px;
+
+  position: relative;
+}
+
+.card_img {
+  height: 30%;
+  border-radius: 20px;
+}
+.card {
+  height: 70%;
+  width: 100%;
+
+  background: $Navy900;
+  border-radius: 20px;
+  position: absolute;
+
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* */
+  @extend %flex;
+}
+
+.previous {
+  border: 3px solid wheat;
+  flex: 1;
+}
+
+.current {
+  border: 3px solid red;
+  flex: 1;
+}
+
+#work {
+  background: $Orange300-work;
+}
+#play {
+  background: $Blue300-play;
+}
+#study {
+  background: $Pink400-study;
+}
+#exercise {
+  background: $Green400-exercise;
+}
+#social {
+  background: $Purple700-social;
+}
+#self_care {
+  background: $Yellow300-self-care;
+}
+
+.ellipsis {
+  height: 8px;
+}
+
+/*   */
+.title {
+  @include fontTheme($weight: 400, $size: 22px, $alignment: left);
+  color: white;
+}
+.current_period {
+  @include fontTheme($weight: 400, $size: 32px, $alignment: left);
+  color: white;
+}
+.previous_period {
+  @include fontTheme($weight: 400, $size: 16px, $alignment: center);
+  color: white;
+}
+
+/* MQ */
+/*
+
+@media screen and (min-width: 600px) {
+  .perfil {
+    background: red;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .perfil {
+    background: yellow;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .perfil {
+    background: goldenrod;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .perfil {
+    background: wheat;
+  }
+}
+*/
