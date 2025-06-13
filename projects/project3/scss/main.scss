@@ -75,7 +75,6 @@ main {
 
 .period {
   position: absolute;
-
   bottom: 20px;
 
   width: 100%;
@@ -116,16 +115,6 @@ main {
   @include fontTheme($weight: 400, $size: 24px, $alignment: left);
 }
 
-/*
-.period {
-  height: 50%;
-  background: $Navy900;
-
-  display: flex;
-  justify-content: space-around;
-}
-*/
-
 .period_selection {
   margin-top: 35px; /* */
   @include fontTheme($weight: 400, $size: 22px, $alignment: center);
@@ -156,7 +145,18 @@ main {
 .card_img {
   height: 30%;
   border-radius: 20px;
+
+  display: flex;
+  justify-content: right;
 }
+
+.icon {
+  margin-right: 20px;
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
 .card {
   height: 70%;
   width: 100%;
@@ -173,14 +173,21 @@ main {
   @extend %flex;
 }
 
-.previous {
-  border: 3px solid wheat;
+.previous,
+.current {
   flex: 1;
+  height: 50%; /* */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.previous {
+  align-items: end;
 }
 
 .current {
-  border: 3px solid red;
-  flex: 1;
+  align-items: start;
 }
 
 #work {
@@ -203,21 +210,26 @@ main {
 }
 
 .ellipsis {
-  height: 8px;
+  height: auto;
+  width: 50px;
+  margin-right: 15px;
 }
 
 /*   */
 .title {
-  @include fontTheme($weight: 400, $size: 22px, $alignment: left);
+  @include fontTheme($weight: 500, $size: 22px, $alignment: left);
   color: white;
+  margin-left: 25px;
 }
 .current_period {
   @include fontTheme($weight: 400, $size: 32px, $alignment: left);
   color: white;
+  margin-left: 25px;
 }
 .previous_period {
-  @include fontTheme($weight: 400, $size: 16px, $alignment: center);
+  @include fontTheme($weight: 400, $size: 16px, $alignment: right);
   color: white;
+  margin-right: 15px;
 }
 
 /* MQ */
