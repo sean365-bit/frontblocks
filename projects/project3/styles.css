@@ -3,8 +3,6 @@
 - Mobile: 375px
 - Desktop: 1440px
 > 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
-
-// <weight>: Use a value from 300 to 900
 */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 .card, .card_container, .img_container, .perfil, main {
@@ -17,7 +15,6 @@ body {
   background: hsl(226, 43%, 10%);
 }
 
-/* */
 main {
   flex-direction: column;
 }
@@ -49,8 +46,50 @@ main {
   height: 40%;
   background: hsl(235, 46%, 20%);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
   border-radius: 20px;
+}
+
+.period_selection {
+  margin-top: 35px; /* */
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  color: hsl(235, 45%, 61%);
+  transition: 0.3s;
+  height: fit-content;
+  padding: 10px;
+  position: relative;
+}
+.period_selection:hover {
+  cursor: pointer;
+}
+
+.period_selection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.period_selection.active::after {
+  width: 100%;
+}
+
+.period_selection.active {
+  color: white;
+}
+
+.period_selection:focus {
+  outline: none;
+  font-weight: bold;
 }
 
 /* card */
@@ -83,21 +122,6 @@ main {
   font-weight: 400;
   font-size: 24px;
   text-align: left;
-}
-
-.period_selection {
-  margin-top: 35px; /* */
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-size: 22px;
-  text-align: center;
-  color: hsl(235, 45%, 61%);
-  transition: 0.3s;
-}
-.period_selection:hover {
-  cursor: pointer;
-  color: hsl(236, 100%, 87%);
 }
 
 /* to be discard */
@@ -184,6 +208,9 @@ main {
   width: 50px;
   margin-right: 15px;
 }
+.ellipsis:hover {
+  cursor: pointer;
+}
 
 /*   */
 .title {
@@ -216,6 +243,122 @@ main {
   margin-right: 15px;
 }
 
+@media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+    height: 100vh;
+    gap: 15px;
+  }
+  .panel_control {
+    width: 190px;
+    height: 80%;
+  }
+  .perfil {
+    flex-direction: column;
+    align-items: start;
+  }
+  .perfil_img {
+    height: 75px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+  }
+  .report {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 25px;
+  }
+  .name {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 32px;
+    text-align: left;
+    margin-left: 25px;
+    color: white;
+  }
+  .period {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5px;
+  }
+  .period_selection {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    /* same as title */
+    width: fit-content;
+    margin-top: 15px; /* */
+    margin-left: 25px;
+    padding: 0px;
+  }
+  /* right side ----------------- */
+  .card_container {
+    /* height: 80%; /* */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+  }
+  .track {
+    /* will change */
+    height: 160px;
+    width: 160px;
+  }
+  .card {
+    height: 80%;
+    top: 60%;
+  }
+  .card_img {
+    border-radius: 10px;
+  }
+  .title {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: left;
+    color: white;
+    margin-left: 15px;
+  }
+  .ellipsis {
+    height: auto;
+    width: 20px;
+  }
+  .current_period {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+    color: white;
+    margin-left: 15px;
+  }
+  .previous_period {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: right;
+    color: white;
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .perfil {
+    background: goldenrod;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .perfil {
+    background: wheat;
+  }
+}
 /* MQ */
 /*
 

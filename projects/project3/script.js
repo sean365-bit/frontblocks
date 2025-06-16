@@ -64,4 +64,17 @@ const getData = (data) => {
   onWeek(data);
 };
 
+// Select all the period selection elements
+const periodSelections = document.querySelectorAll(".period_selection");
+
+periodSelections.forEach((selection) => {
+  selection.addEventListener("click", () => {
+    // Remove 'active' class from all selections
+    periodSelections.forEach((item) => item.classList.remove("active"));
+
+    // Add 'active' class to the clicked element
+    selection.classList.add("active");
+  });
+});
+
 fetchData();
