@@ -26,6 +26,7 @@ const renderData = (data, period, label) => {
       <div class="current">
         <div class="title">${item.title}</div>
         <div class="current_period">${item.timeframes[period].current} hrs</div>
+        <div class="previous_period row">${label} - ${item.timeframes[period].previous} hrs</div>
       </div>
 
       <div class="previous">
@@ -34,7 +35,7 @@ const renderData = (data, period, label) => {
           alt="ellipsis icon"
           class="ellipsis"
         />
-        <div class="previous_period">${label} - ${item.timeframes[period].previous} hrs</div>
+        <div class="previous_period column">${label} - ${item.timeframes[period].previous} hrs</div>
       </div>      
       `;
     }

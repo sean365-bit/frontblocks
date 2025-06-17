@@ -1,8 +1,3 @@
-/*
-- Mobile: 375px
-- Desktop: 1440px
-> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
-*/
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 // Variables
@@ -47,11 +42,8 @@ main {
 .panel_control {
   height: 250px;
   width: 350px;
-
-  /* */
   display: flex;
   flex-direction: column;
-
   margin-top: 25px;
   margin-bottom: 25px;
   position: relative;
@@ -70,11 +62,9 @@ main {
 .period {
   position: absolute;
   bottom: 20px;
-
   width: 100%;
   height: 40%;
   background: $Navy900;
-
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -82,7 +72,7 @@ main {
 }
 
 .period_selection {
-  margin-top: 35px; /* */
+  margin-top: 35px;
   @include fontTheme($weight: 400, $size: 22px, $alignment: center);
 
   color: $Purple500;
@@ -95,6 +85,7 @@ main {
   height: fit-content;
   padding: 10px;
   position: relative;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .period_selection::after {
@@ -144,7 +135,6 @@ main {
   @include fontTheme($weight: 400, $size: 24px, $alignment: left);
 }
 
-/* to be discard */
 .card_container {
   @extend %flex;
   flex-direction: column;
@@ -154,14 +144,12 @@ main {
 .track {
   height: 250px;
   width: 350px;
-
   position: relative;
 }
 
 .card_img {
   height: 30%;
   border-radius: 20px;
-
   display: flex;
   justify-content: right;
 }
@@ -180,29 +168,27 @@ main {
   background: $Navy900;
   border-radius: 20px;
   position: absolute;
+  transition: 0.3s;
 
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  /* */
   @extend %flex;
 }
 
 .previous,
 .current {
-  flex: 1;
-  height: 50%; /* */
-
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 .previous {
+  width: 50%;
   align-items: end;
 }
-
 .current {
+  width: 50%;
   align-items: start;
 }
 
@@ -235,28 +221,33 @@ main {
   }
 }
 
-/*   */
 .title {
   @include fontTheme($weight: 500, $size: 22px, $alignment: left);
   color: white;
   margin-left: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 .current_period {
   @include fontTheme($weight: 400, $size: 32px, $alignment: left);
   color: white;
   margin-left: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.row {
+  display: none;
 }
 .previous_period {
   @include fontTheme($weight: 400, $size: 16px, $alignment: right);
-  color: white;
+
   margin-right: 15px;
+  color: $Purple500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 @media screen and (min-width: 768px) {
   main {
     flex-direction: row;
     height: 100vh;
-
     gap: 15px;
   }
 
@@ -290,27 +281,19 @@ main {
 
   .period {
     flex-direction: column;
-
     justify-content: space-evenly;
     gap: 5px;
   }
 
   .period_selection {
-    @include fontTheme(
-      $weight: 400,
-      $size: 16px,
-      $alignment: center
-    ); /* same as title */
+    @include fontTheme($weight: 400, $size: 16px, $alignment: center);
     width: fit-content;
-    margin-top: 15px; /* */
+    margin-top: 15px;
     margin-left: 25px;
     padding: 0px;
   }
 
-  /* right side ----------------- */
-
   .card_container {
-    /* height: 80%; /* */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -318,7 +301,6 @@ main {
   }
 
   .track {
-    /* will change */
     height: 160px;
     width: 160px;
   }
@@ -341,6 +323,7 @@ main {
   .ellipsis {
     height: auto;
     width: 20px;
+    margin-top: 15px;
   }
 
   .current_period {
@@ -351,47 +334,59 @@ main {
 
   .previous_period {
     @include fontTheme($weight: 400, $size: 12px, $alignment: right);
-    color: white;
-    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .column {
+    display: none;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .current {
+    width: 80%;
+  }
+
+  .previous {
+    width: 20%;
+    justify-content: start;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .perfil {
-    background: goldenrod;
+  .panel_control {
+    width: 225px;
+    height: 550px;
+  }
+
+  .period_selection {
+    margin-top: 10px;
+  }
+
+  .track {
+    height: 250px;
+    width: 250px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .current_period {
+    font-size: 42px;
+  }
+
+  .previous_period {
+    font-size: 16px;
+  }
+
+  .current {
+    width: 70%;
+  }
+
+  .previous {
+    width: 30%;
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .perfil {
-    background: wheat;
-  }
-}
-
-/* MQ */
-/*
-
-@media screen and (min-width: 600px) {
-  .perfil {
-    background: red;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .perfil {
-    background: yellow;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .perfil {
-    background: goldenrod;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .perfil {
-    background: wheat;
-  }
-}
-*/
