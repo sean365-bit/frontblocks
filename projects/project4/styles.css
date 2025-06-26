@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* 
+.inter-<uniquifier> {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens. 
+*/
+body {
+  background-color: hsl(0, 0%, 100%);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: hsl(230, 17%, 14%);
+  color: hsl(230, 17%, 14%);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+.dark-mode button {
+  background-color: hsl(208, 92%, 53%);
+  color: white;
+}
+
+/*# sourceMappingURL=styles.css.map */
