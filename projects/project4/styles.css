@@ -15,29 +15,125 @@ The designs were created to the following widths:
 > 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens. 
 */
 body {
-  background-color: hsl(0, 0%, 100%);
+  background: hsl(230, 17%, 14%);
   transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode {
-  background: hsl(230, 17%, 14%);
+/* itemsToChange */
+.dark_mode {
+  background: hsl(0, 0%, 100%);
   color: hsl(230, 17%, 14%);
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #e0e0e0;
-  transition: background-color 0.3s;
+.light_button {
+  background: hsl(0, 0%, 100%);
 }
 
-.dark-mode button {
-  background-color: hsl(208, 92%, 53%);
+/* itemsToChange */
+.tittle {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 26px;
+  text-align: center;
   color: white;
+}
+
+.total_followers {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: hsl(228, 34%, 66%);
+}
+
+.dark_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mode_text {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: hsl(228, 34%, 66%);
+}
+
+/* switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 15px;
+  bottom: 4px;
+  background-color: hsl(232, 19%, 15%);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* switch */
+.card {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}
+
+/* Dark mode */
+.dark_mode .card {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.dark_mode .followers_tittle {
+  color: #ccc;
+}
+
+.dark_mode .stats {
+  color: #32cd32;
 }
 
 /*# sourceMappingURL=styles.css.map */

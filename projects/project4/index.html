@@ -12,7 +12,22 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <button id="toggleButton" onclick="toggleDarkMode()"></button>
+    <div class="tittle">Social Media Dashboard</div>
+    <div class="total_followers">Total Followers: 23,004</div>
+
+    <div class="dark_container">
+      <div class="mode_text">Dark Mode</div>
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" aria-label="Toggle dark mode" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="followers">1987</div>
+      <div class="followers_tittle">FOLLOWERS</div>
+      <div class="stats">12 Today</div>
+    </div>
 
     <script src="./script.js"></script>
   </body>

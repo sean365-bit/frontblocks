@@ -1,29 +1,21 @@
 "use strict";
 console.log("This is project 4, this was developed by sean365-bit");
 
-const toggleButton = document.getElementById("toggleButton");
+const toggle = document.getElementById("modeToggle");
 
-// Initialize mode based on localStorage
-function initializeMode() {
-  const darkModeEnabled = localStorage.getItem("darkMode") === "false";
-  if (darkModeEnabled) {
-    document.body.classList.add("dark-mode");
-    toggleButton.innerHTML = "☀️ Enable Light Mode";
-  } else {
-    toggleButton.innerHTML = "🌙 Enable Dark Mode";
-  }
+function itemsToChange() {
+  const element = document.body;
+  element.classList.toggle("dark_mode");
 }
 
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  const isDarkMode = document.body.classList.contains("dark-mode");
+toggle.addEventListener("change", itemsToChange);
 
-  // Update button text and icon
-  toggleButton.innerHTML = isDarkMode
-    ? "☀️ Enable Light Mode"
-    : "🌙 Enable Dark Mode";
+// const buttonLight = document.querySelector(".slider");
+/*
+If you'd like the text to change from “Dark Mode” to “Light Mode” based on the current theme, update it in JS:
 
-  localStorage.setItem("darkMode", isDarkMode);
+const modeText = document.querySelector(".mode_text");
+function updateModeText(isDark) {
+  modeText.textContent = isDark ? "Light Mode" : "Dark Mode";
 }
-
-initializeMode();
+*/
