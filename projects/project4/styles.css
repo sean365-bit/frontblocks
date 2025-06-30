@@ -17,6 +17,16 @@ The designs were created to the following widths:
 body {
   background: hsl(230, 17%, 14%);
   transition: background-color 0.3s, color 0.3s;
+  /* */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading_tittle {
+  width: 350px; /* */
+  margin-bottom: 20px;
 }
 
 /* itemsToChange */
@@ -29,33 +39,61 @@ body {
   background: hsl(0, 0%, 100%);
 }
 
+.dark_mode .tittle {
+  color: hsl(230, 17%, 14%);
+}
+
+.dark_mode .card {
+  background-color: hsl(227, 47%, 96%);
+}
+
+.dark_mode .followers {
+  color: hsl(230, 17%, 14%);
+}
+
+.dark_mode .default {
+  color: hsl(163, 72%, 41%);
+}
+
+.dark_mode .followers_tittle {
+  color: hsl(228, 12%, 44%);
+}
+
 /* itemsToChange */
 .tittle {
-  font-family: "Rubik", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 28px;
   text-align: center;
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 .total_followers {
-  font-family: "Rubik", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   color: hsl(228, 34%, 66%);
+}
+
+.line_break {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(228, 12%, 44%);
+  margin-bottom: 20px;
 }
 
 .dark_container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 25px;
 }
 
 .mode_text {
-  font-family: "Rubik", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-size: 20px;
@@ -115,25 +153,105 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* switch */
+/* switch end */
 .card {
-  background-color: #fff;
-  color: #000;
+  background-color: hsl(228, 28%, 20%);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+  margin-bottom: 15px;
+}
+
+.banner {
+  height: 2%;
+  border-radius: 15px 15px 0 0;
+}
+
+.facebook {
+  background: hsl(208, 92%, 53%);
+}
+
+.twitter {
+  background: hsl(203, 89%, 53%);
+}
+
+.instagram {
+  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+
+.youTube {
+  background: hsl(348, 97%, 39%);
+}
+
+.increase_color {
+  color: hsl(163, 72%, 41%);
+}
+
+.decrease_color {
+  color: hsl(356, 69%, 56%);
+}
+
+.content {
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user {
+  color: hsl(228, 34%, 66%);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 16px;
   text-align: center;
 }
 
-/* Dark mode */
-.dark_mode .card {
-  background-color: #1f1f1f;
-  color: #fff;
+.followers {
+  color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 64px;
+  text-align: center;
 }
 
-.dark_mode .followers_tittle {
-  color: #ccc;
+.followers_tittle {
+  color: hsl(228, 34%, 66%);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 10px;
+  margin-bottom: 25px;
 }
 
-.dark_mode .stats {
-  color: #32cd32;
+.stats_container {
+  color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.stats_container img {
+  width: auto;
+}
+
+.icon_container,
+.followers {
+  margin-bottom: 20px;
+}
+
+.icon_container,
+.stats_container {
+  display: flex;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

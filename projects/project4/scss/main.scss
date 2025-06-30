@@ -43,7 +43,7 @@ $darkGrayishBlue: hsl(228, 12%, 44%); // (Text)
 $veryDarkBlueText: hsl(230, 17%, 14%); // (Text)
 
 @mixin fontTheme($weight: 400, $size: 12px, $alignment: center) {
-  font-family: "Rubik", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: $weight;
   font-size: $size;
@@ -53,6 +53,17 @@ $veryDarkBlueText: hsl(230, 17%, 14%); // (Text)
 body {
   background: $veryDarkBlue;
   transition: background-color 0.3s, color 0.3s;
+  /* */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading_tittle {
+  width: 350px; /* */
+
+  margin-bottom: 20px;
 }
 
 /* itemsToChange */
@@ -63,23 +74,51 @@ body {
 .light_button {
   background: $white;
 }
+
+.dark_mode .tittle {
+  color: $veryDarkBlueText;
+}
+
+.dark_mode .card {
+  background-color: $lightGrayishBlue;
+}
+
+.dark_mode .followers {
+  color: $veryDarkBlueText;
+}
+.dark_mode .default {
+  color: $limeGreen;
+}
+
+.dark_mode .followers_tittle {
+  color: $darkGrayishBlue;
+}
+
 /* itemsToChange */
 
 .tittle {
-  @include fontTheme($weight: 600, $size: 26px, $alignment: center);
-  color: white;
+  @include fontTheme($weight: 600, $size: 28px, $alignment: center);
+  color: $white;
 }
 
 .total_followers {
-  @include fontTheme($weight: 600, $size: 20px, $alignment: center);
+  @include fontTheme($weight: 600, $size: 18px, $alignment: center);
   color: $desaturatedBlue;
+}
+.line_break {
+  width: 100%;
+  height: 1px;
+  background-color: $darkGrayishBlue;
+  margin-bottom: 20px;
 }
 
 .dark_container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 25px;
 }
+
 .mode_text {
   @include fontTheme($weight: 600, $size: 20px, $alignment: center);
   color: $desaturatedBlue;
@@ -92,13 +131,11 @@ body {
   width: 70px;
   height: 30px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -110,52 +147,107 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .slider:before {
   position: absolute;
   content: "";
   height: 23px;
   width: 23px;
-
   left: 15px;
   bottom: 4px;
   background-color: $veryDarkBlueBGPattern;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(23px);
   transform: translateX(23px);
 }
-
 .slider.round {
   border-radius: 34px;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
-/* switch */
+/* switch end */
 
 .card {
-  background-color: #fff;
-  color: #000;
-  text-align: center;
+  background-color: $darkDesaturatedBlue;
+
+  width: 300px;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 9px;
+
+  margin-bottom: 15px;
 }
 
-/* Dark mode */
-
-.dark_mode .card {
-  background-color: #1f1f1f;
-  color: #fff;
+.banner {
+  height: 2%;
+  border-radius: 15px 15px 0 0;
 }
 
-.dark_mode .followers_tittle {
-  color: #ccc;
+.facebook {
+  background: $faceBook;
+}
+.twitter {
+  background: $twitter;
+}
+.instagram {
+  background: $instagram;
+}
+.youTube {
+  background: $youTube;
+}
+.increase_color {
+  color: $limeGreen;
+}
+.decrease_color {
+  color: $brightRed;
 }
 
-.dark_mode .stats {
-  color: #32cd32;
+.content {
+  height: 98%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user {
+  color: $desaturatedBlue;
+  @include fontTheme($weight: 600, $size: 16px, $alignment: center);
+}
+.followers {
+  color: $whiteText;
+  @include fontTheme($weight: 600, $size: 64px, $alignment: center);
+}
+.followers_tittle {
+  color: $desaturatedBlue;
+  @include fontTheme($weight: 500, $size: 16px, $alignment: center);
+  letter-spacing: 10px;
+  margin-bottom: 25px;
+}
+.stats_container {
+  color: $whiteText;
+  @include fontTheme($weight: 600, $size: 16px, $alignment: center);
+}
+
+.stats_container img {
+  width: auto;
+}
+
+.icon_container,
+.followers {
+  margin-bottom: 20px;
+}
+
+.icon_container,
+.stats_container {
+  display: flex;
+  gap: 10px;
 }
