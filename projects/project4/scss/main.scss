@@ -1,15 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 /* 
-.inter-<uniquifier> {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
 The designs were created to the following widths:
-
 - Mobile: 375px
 - Desktop: 1440px
 > 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens. 
@@ -79,7 +71,8 @@ body {
   color: $veryDarkBlueText;
 }
 
-.dark_mode .card {
+.dark_mode .card,
+.dark_mode .overview_card {
   background-color: $lightGrayishBlue;
 }
 
@@ -94,6 +87,19 @@ body {
   color: $darkGrayishBlue;
 }
 
+.dark_mode .total_followers,
+.dark_mode .mode_text,
+.dark_mode .overview_heading {
+  color: $darkGrayishBlue;
+}
+
+.dark_mode .overview_title {
+  color: $darkGrayishBlue;
+}
+
+.dark_mode .overview_stat_number {
+  color: $veryDarkBlueText;
+}
 /* itemsToChange */
 
 .tittle {
@@ -152,16 +158,16 @@ body {
   content: "";
   height: 23px;
   width: 23px;
-  left: 15px;
+  left: 8px;
   bottom: 4px;
   background-color: $veryDarkBlueBGPattern;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(23px);
-  transform: translateX(23px);
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
 }
 .slider.round {
   border-radius: 34px;
@@ -181,7 +187,6 @@ input:checked + .slider:before {
   flex-direction: column;
 
   border-radius: 9px;
-
   margin-bottom: 15px;
 }
 
@@ -189,7 +194,6 @@ input:checked + .slider:before {
   height: 2%;
   border-radius: 15px 15px 0 0;
 }
-
 .facebook {
   background: $faceBook;
 }
@@ -237,10 +241,6 @@ input:checked + .slider:before {
   @include fontTheme($weight: 600, $size: 16px, $alignment: center);
 }
 
-.stats_container img {
-  width: auto;
-}
-
 .icon_container,
 .followers {
   margin-bottom: 20px;
@@ -249,5 +249,69 @@ input:checked + .slider:before {
 .icon_container,
 .stats_container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+}
+
+/*
+.overview_container {
+ 
+}
+*/
+
+.overview_heading {
+  @include fontTheme($weight: 600, $size: 28px, $alignment: center);
+  color: $white;
+  margin-bottom: 20px;
+}
+
+.overview_card {
+  width: 300px;
+  height: 150px;
+
+  background-color: $darkDesaturatedBlue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 9px;
+  margin-bottom: 15px;
+}
+
+.overview_card_header,
+.overview_card_body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+  height: 50%;
+}
+
+.overview_card_header img {
+  max-height: 30px;
+}
+
+.overview_title {
+  @include fontTheme($weight: 600, $size: 16px, $alignment: center);
+  color: $desaturatedBlue;
+}
+
+.overview_stat_number {
+  color: $whiteText;
+  @include fontTheme($weight: 600, $size: 36px, $alignment: center);
+}
+
+.overview_stats_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.stats {
+  @include fontTheme($weight: 600, $size: 16px, $alignment: center);
 }

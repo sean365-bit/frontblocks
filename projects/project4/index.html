@@ -12,96 +12,238 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="heading_tittle">
-      <div class="tittle">Social Media Dashboard</div>
-      <div class="total_followers">Total Followers: 23,004</div>
-    </div>
+    <header>
+      <div class="heading_tittle">
+        <div class="tittle">Social Media Dashboard</div>
+        <div class="total_followers">Total Followers: 23,004</div>
+      </div>
 
-    <div class="line_break"></div>
+      <div class="line_break"></div>
 
-    <div class="dark_container">
-      <div class="mode_text">Dark Mode</div>
-      <label class="switch">
-        <input type="checkbox" id="modeToggle" aria-label="Toggle dark mode" />
-        <span class="slider round"></span>
-      </label>
-    </div>
+      <div class="dark_container">
+        <div class="mode_text">Light Mode</div>
+        <label class="switch">
+          <input
+            type="checkbox"
+            id="modeToggle"
+            aria-label="Toggle dark mode"
+          />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
 
-    <div class="card">
-      <div class="banner facebook"></div>
+    <main>
+      <div class="card">
+        <div class="banner facebook"></div>
 
-      <div class="content">
-        <div class="icon_container">
-          <img src="./assets/icon-facebook.svg" alt="icon" />
-          <div class="user">@nathanf</div>
-        </div>
+        <div class="content">
+          <div class="icon_container">
+            <img src="./assets/icon-facebook.svg" alt="icon" />
+            <div class="user">@nathanf</div>
+          </div>
 
-        <div class="followers">1987</div>
-        <div class="followers_tittle">FOLLOWERS</div>
+          <div class="followers">1987</div>
+          <div class="followers_tittle">FOLLOWERS</div>
 
-        <div class="stats_container">
-          <img src="./assets/icon-up.svg" alt="icon up" />
-          <div class="stats default">12 Today</div>
+          <div class="stats_container">
+            <img src="./assets/icon-up.svg" alt="icon up" />
+            <div class="stats default">12 Today</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="card">
-      <div class="banner twitter"></div>
+      <div class="card">
+        <div class="banner twitter"></div>
 
-      <div class="content">
-        <div class="icon_container">
-          <img src="./assets/icon-twitter.svg" alt="icon" />
-          <div class="user">@nathanf</div>
-        </div>
+        <div class="content">
+          <div class="icon_container">
+            <img src="./assets/icon-twitter.svg" alt="icon" />
+            <div class="user">@nathanf</div>
+          </div>
 
-        <div class="followers">1044</div>
-        <div class="followers_tittle">FOLLOWERS</div>
+          <div class="followers">1044</div>
+          <div class="followers_tittle">FOLLOWERS</div>
 
-        <div class="stats_container">
-          <img src="./assets/icon-up.svg" alt="icon up" />
-          <div class="stats increase_color">99 Today</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="banner instagram"></div>
-
-      <div class="content">
-        <div class="icon_container">
-          <img src="./assets/icon-instagram.svg" alt="icon" />
-          <div class="user">@nathanf</div>
-        </div>
-
-        <div class="followers">11K</div>
-        <div class="followers_tittle">FOLLOWERS</div>
-
-        <div class="stats_container">
-          <img src="./assets/icon-up.svg" alt="icon up" />
-          <div class="stats increase_color">1099 Today</div>
+          <div class="stats_container">
+            <img src="./assets/icon-up.svg" alt="icon up" />
+            <div class="stats increase_color">99 Today</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="card">
-      <div class="banner youTube"></div>
+      <div class="card">
+        <div class="banner instagram"></div>
 
-      <div class="content">
-        <div class="icon_container">
-          <img src="./assets/icon-youtube.svg" alt="icon" />
-          <div class="user">@nathanf</div>
-        </div>
+        <div class="content">
+          <div class="icon_container">
+            <img src="./assets/icon-instagram.svg" alt="icon" />
+            <div class="user">@nathanf</div>
+          </div>
 
-        <div class="followers">8239</div>
-        <div class="followers_tittle">FOLLOWERS</div>
+          <div class="followers">11K</div>
+          <div class="followers_tittle">FOLLOWERS</div>
 
-        <div class="stats_container">
-          <img src="./assets/icon-down.svg" alt="icon down" />
-          <div class="stats decrease_color">144 Today</div>
+          <div class="stats_container">
+            <img src="./assets/icon-up.svg" alt="icon up" />
+            <div class="stats increase_color">1099 Today</div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div class="card">
+        <div class="banner youTube"></div>
+
+        <div class="content">
+          <div class="icon_container">
+            <img src="./assets/icon-youtube.svg" alt="icon" />
+            <div class="user">@nathanf</div>
+          </div>
+
+          <div class="followers">8239</div>
+          <div class="followers_tittle">SUBSCRIBERS</div>
+
+          <div class="stats_container">
+            <img src="./assets/icon-down.svg" alt="icon down" />
+            <div class="decrease_color">144 Today</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview_container">
+        <div class="overview_heading">Overview - Today</div>
+
+        <div class="overview_cards">
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Page Views</div>
+              <img src="./assets/icon-facebook.svg" alt="Facebook logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">87</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-up.svg" alt="icon up" />
+                <p class="stats increase_color">3%</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Likes</div>
+              <img src="./assets/icon-facebook.svg" alt="Facebook logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">52</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-down.svg" alt="icon down" />
+                <p class="stats decrease_color">2%</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Likes</div>
+              <img src="./assets/icon-instagram.svg" alt="Instagram logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">5462</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-up.svg" alt="icon up" />
+                <p class="stats increase_color">2257%</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Profile Views</div>
+              <img src="./assets/icon-instagram.svg" alt="Instagram logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">52K</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-up.svg" alt="icon up" />
+                <p class="stats increase_color">1375%</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Retweets</div>
+              <img src="./assets/icon-twitter.svg" alt="Twitter logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">117</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-up.svg" alt="icon up" />
+                <p class="stats increase_color">303%</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Likes</div>
+              <img src="./assets/icon-twitter.svg" alt="Twitter logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">507</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-up.svg" alt="icon up" />
+                <p class="stats increase_color">553%</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Likes</div>
+              <img src="./assets/icon-youtube.svg" alt="YouTube logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">107</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-down.svg" alt="icon down" />
+                <p class="stats decrease_color">19%</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="overview_card">
+            <section class="overview_card_header">
+              <div class="overview_title">Total Views</div>
+              <img src="./assets/icon-youtube.svg" alt="YouTube logo" />
+            </section>
+
+            <section class="overview_card_body">
+              <p class="overview_stat_number">1407</p>
+
+              <div class="overview_stats_container">
+                <img src="./assets/icon-down.svg" alt="icon down" />
+                <p class="stats decrease_color">12%</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="./script.js"></script>
   </body>
