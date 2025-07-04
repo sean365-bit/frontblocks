@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-/* 
-The designs were created to the following widths:
-- Mobile: 375px
-- Desktop: 1440px
-> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens. 
-*/
-
 // Variables
 // primary
 $limeGreen: hsl(163, 72%, 41%);
@@ -52,9 +45,16 @@ body {
   align-items: center;
 }
 
-.heading_tittle {
-  width: 350px; /* */
+header {
+  margin-top: 20px;
+}
 
+main,
+header {
+  width: 90%;
+}
+
+.heading_tittle {
   margin-bottom: 20px;
 }
 
@@ -103,12 +103,12 @@ body {
 /* itemsToChange */
 
 .tittle {
-  @include fontTheme($weight: 600, $size: 28px, $alignment: center);
+  @include fontTheme($weight: 600, $size: 1.5rem, $alignment: left);
   color: $white;
 }
 
 .total_followers {
-  @include fontTheme($weight: 600, $size: 18px, $alignment: center);
+  @include fontTheme($weight: 600, $size: 18px, $alignment: left);
   color: $desaturatedBlue;
 }
 .line_break {
@@ -122,7 +122,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 .mode_text {
@@ -180,8 +180,8 @@ input:checked + .slider:before {
 .card {
   background-color: $darkDesaturatedBlue;
 
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 325px;
 
   display: flex;
   flex-direction: column;
@@ -215,7 +215,6 @@ input:checked + .slider:before {
 
 .content {
   height: 98%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,24 +253,21 @@ input:checked + .slider:before {
   gap: 10px;
 }
 
-/*
 .overview_container {
- 
+  width: 90%;
+  margin-bottom: 20px;
 }
-*/
 
 .overview_heading {
-  @include fontTheme($weight: 600, $size: 28px, $alignment: center);
+  @include fontTheme($weight: 600, $size: 28px, $alignment: left);
   color: $white;
   margin-bottom: 20px;
 }
 
 .overview_card {
-  width: 300px;
+  width: 100%;
   height: 150px;
-
   background-color: $darkDesaturatedBlue;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -314,4 +310,87 @@ input:checked + .slider:before {
 
 .stats {
   @include fontTheme($weight: 600, $size: 16px, $alignment: center);
+}
+
+@media screen and (min-width: 600px) {
+  header,
+  main,
+  .overview_container {
+    width: 70%; /* */
+  }
+
+  main {
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    height: 300px;
+  }
+
+  .overview_card {
+    width: 100%;
+    height: 175px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .overview_container,
+  header,
+  main {
+    width: 85%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .line_break {
+    display: none;
+  }
+
+  .dark_container {
+    gap: 20px;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .overview_heading {
+    text-align: left;
+  }
+
+  .part_one,
+  .part_two {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .overview_card {
+    width: 250px;
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header,
+  main,
+  .overview_container {
+    width: 80%;
+  }
+  .card {
+    width: 280px;
+    height: 280px;
+  }
+  .overview_card {
+    width: 280px;
+    height: 150px;
+  }
 }

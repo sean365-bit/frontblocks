@@ -1,11 +1,4 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-/* 
-The designs were created to the following widths:
-- Mobile: 375px
-- Desktop: 1440px
-> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens. 
-*/
 body {
   background: hsl(230, 17%, 14%);
   transition: background-color 0.3s, color 0.3s;
@@ -16,8 +9,16 @@ body {
   align-items: center;
 }
 
+header {
+  margin-top: 20px;
+}
+
+main,
+header {
+  width: 90%;
+}
+
 .heading_tittle {
-  width: 350px; /* */
   margin-bottom: 20px;
 }
 
@@ -71,8 +72,8 @@ body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 28px;
-  text-align: center;
+  font-size: 1.5rem;
+  text-align: left;
   color: hsl(0, 0%, 100%);
 }
 
@@ -81,7 +82,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 600;
   font-size: 18px;
-  text-align: center;
+  text-align: left;
   color: hsl(228, 34%, 66%);
 }
 
@@ -96,7 +97,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 .mode_text {
@@ -163,8 +164,8 @@ input:checked + .slider:before {
 /* switch end */
 .card {
   background-color: hsl(228, 28%, 20%);
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 325px;
   display: flex;
   flex-direction: column;
   border-radius: 9px;
@@ -259,23 +260,23 @@ input:checked + .slider:before {
   gap: 10px;
 }
 
-/*
 .overview_container {
-
+  width: 90%;
+  margin-bottom: 20px;
 }
-*/
+
 .overview_heading {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-size: 28px;
-  text-align: center;
+  text-align: left;
   color: hsl(0, 0%, 100%);
   margin-bottom: 20px;
 }
 
 .overview_card {
-  width: 300px;
+  width: 100%;
   height: 150px;
   background-color: hsl(228, 28%, 20%);
   display: flex;
@@ -330,6 +331,77 @@ input:checked + .slider:before {
   font-weight: 600;
   font-size: 16px;
   text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  header,
+  main,
+  .overview_container {
+    width: 70%; /* */
+  }
+  main {
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    height: 300px;
+  }
+  .overview_card {
+    width: 100%;
+    height: 175px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .overview_container,
+  header,
+  main {
+    width: 85%;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .line_break {
+    display: none;
+  }
+  .dark_container {
+    gap: 20px;
+  }
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    width: 250px;
+    height: 250px;
+  }
+  .overview_heading {
+    text-align: left;
+  }
+  .part_one,
+  .part_two {
+    display: flex;
+    justify-content: space-between;
+  }
+  .overview_card {
+    width: 250px;
+    height: 130px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  header,
+  main,
+  .overview_container {
+    width: 80%;
+  }
+  .card {
+    width: 280px;
+    height: 280px;
+  }
+  .overview_card {
+    width: 280px;
+    height: 150px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
