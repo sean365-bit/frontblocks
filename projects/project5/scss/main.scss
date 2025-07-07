@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+Font size (paragraph): 16px
+
+.kumbh-sans-<uniquifier> {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "YOPQ" 300;
+}
+*/
+
+$orange: hsl(26, 100%, 55%);
+$paleOrange: hsl(25, 100%, 94%);
+
+$veryDarkBlue: hsl(220, 13%, 13%);
+$darkGrayishBlue: hsl(219, 9%, 45%);
+$gayishBlue: hsl(220, 14%, 75%);
+$lightGrayishBlue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+// $black: (with 75% opacity for lightbox background): hsl(0, 0%, 0%);
+
+@mixin fontTheme($weight: 400, $size: 12px, $alignment: center) {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-size: $size;
+  text-align: $alignment;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $paleOrange;
+}

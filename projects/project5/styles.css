@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+Font size (paragraph): 16px
+
+.kumbh-sans-<uniquifier> {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "YOPQ" 300;
+}
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(25, 100%, 94%);
+}
+
+/*# sourceMappingURL=styles.css.map */
