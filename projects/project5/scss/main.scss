@@ -26,7 +26,7 @@ $black: hsl(0, 0%, 0%);
 // $black: (with 75% opacity for lightbox background): hsl(0, 0%, 0%);
 
 @mixin fontTheme($weight: 400, $size: 12px, $alignment: center) {
-  font-family: "Inter", sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: $weight;
   font-size: $size;
@@ -41,4 +41,252 @@ $black: hsl(0, 0%, 0%);
 
 body {
   background-color: $paleOrange;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include fontTheme(400, 16px);
+}
+
+header {
+  width: 100%;
+}
+
+nav {
+  height: 100px;
+  display: flex;
+}
+
+.nav_section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.menu_section {
+  width: 70%;
+  justify-content: left;
+}
+
+.cart_section {
+  width: 30%;
+  justify-content: right;
+}
+
+.menu_icon {
+  margin-left: 15px;
+  height: 25px;
+}
+
+.brand_logo {
+  height: 25px;
+}
+
+.icon_cart {
+  height: 35px;
+}
+
+.avatar {
+  height: 40px;
+  margin-right: 15px;
+}
+
+/* slider */
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow_container {
+  max-width: 400px;
+
+  position: relative;
+  margin: auto;
+}
+
+.product_img {
+  width: 100%;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+
+  top: 50%;
+  margin-top: -22px;
+  width: 50px;
+  height: 50px;
+
+  user-select: none;
+
+  background: $white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.6s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next {
+    font-size: 11px;
+  }
+}
+
+/* info section */
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 400px;
+}
+.title,
+.heading,
+.shoe_info,
+.price_container,
+.counter,
+button {
+  width: 90%;
+}
+
+.title {
+  color: $darkGrayishBlue;
+  font-weight: 600;
+
+  text-align: left;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.heading {
+  text-align: left;
+  color: $black;
+  font-weight: 600;
+  font-size: 32px;
+
+  margin-bottom: 15px;
+}
+
+.shoe_info {
+  text-align: left;
+  line-height: 25px;
+  color: $darkGrayishBlue;
+
+  margin-bottom: 15px;
+}
+
+/* */
+.price_container {
+  display: flex;
+
+  height: 80px;
+}
+
+.price_child_one,
+.price_child_two {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.price_child_one {
+  width: 60%;
+}
+.price_child_two {
+  width: 40%;
+}
+
+.current_price {
+  color: $black;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.discount {
+  font-weight: 600;
+  color: $paleOrange;
+  background: $black;
+
+  border-radius: 10px;
+  width: 75px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price_child_two {
+  color: $darkGrayishBlue;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.counter {
+  height: 80px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $lightGrayishBlue;
+
+  margin-bottom: 15px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+button {
+  border: none;
+  border-radius: 15px;
+  height: 80px;
+
+  background: $orange;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+
+  p {
+    font-weight: 600;
+    font-size: 18px;
+    color: $black;
+  }
 }
