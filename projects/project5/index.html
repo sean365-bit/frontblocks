@@ -11,7 +11,22 @@
     <header>
       <nav>
         <section class="menu_section nav_section">
-          <img src="./assets/icon-menu.svg" alt="icon" class="menu_icon" />
+          <!-- navBar -->
+          <div class="topnav" id="myTopnav">
+            <a href="#collections" class="collections">Collections</a>
+            <a href="#men">Men</a>
+            <a href="#women">Women</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+            <img
+              id="menu"
+              class="menu_icon icon"
+              src="./assets/icon-menu.svg"
+              alt="icon"
+            />
+          </div>
+
           <img src="./assets/logo.svg" alt="brand logo" class="brand_logo" />
         </section>
 
@@ -25,25 +40,41 @@
     <main>
       <div class="slideshow_container">
         <div class="mySlides fade">
-          <img src="./assets/image-product-1.jpg" class="product_img" />
+          <img
+            src="./assets/image-product-1.jpg"
+            class="product_img"
+            alt="product image"
+          />
         </div>
 
         <div class="mySlides fade">
-          <img src="./assets/image-product-2.jpg" class="product_img" />
+          <img
+            src="./assets/image-product-2.jpg"
+            class="product_img"
+            alt="product image"
+          />
         </div>
 
         <div class="mySlides fade">
-          <img src="./assets/image-product-3.jpg" class="product_img" />
+          <img
+            src="./assets/image-product-3.jpg"
+            class="product_img"
+            alt="product image"
+          />
         </div>
 
         <div class="mySlides fade">
-          <img src="./assets/image-product-4.jpg" class="product_img" />
+          <img
+            src="./assets/image-product-4.jpg"
+            class="product_img"
+            alt="product image"
+          />
         </div>
 
-        <a class="prev" onclick="plusSlides(-1)">
+        <a class="prev" id="previous">
           <img src="./assets/icon-previous.svg" alt="icon" />
         </a>
-        <a class="next" onclick="plusSlides(1)">
+        <a class="next" id="next">
           <img src="./assets/icon-next.svg" alt="icon"
         /></a>
       </div>
