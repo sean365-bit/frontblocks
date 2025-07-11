@@ -56,6 +56,10 @@ header {
   width: 100%;
 }
 
+main {
+  margin-bottom: 30px;
+}
+
 nav {
   height: 100px;
   display: flex;
@@ -87,12 +91,51 @@ nav {
   }
 }
 
+.close_icon {
+  height: 35px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .brand_logo {
   height: 25px;
 }
 
 .icon_cart {
   height: 35px;
+}
+
+.shopping_cart {
+  // border: 3px solid green;
+
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.items_in_cart {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  border-radius: 10px;
+  width: 35px;
+
+  background: $orange;
+  color: $white;
+  font-weight: 600;
+
+  display: none;
+}
+
+.show_items_in_cart {
+  display: block;
 }
 
 .avatar {
@@ -105,9 +148,11 @@ nav {
   display: none;
 }
 
+/*
 img {
   vertical-align: middle;
 }
+  */
 
 /* Slideshow container */
 .slideshow_container {
@@ -276,6 +321,17 @@ button {
   font-weight: 600;
 }
 
+/* */
+.decrease,
+.increase {
+  padding: 15px;
+  height: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 button {
   border: none;
   border-radius: 15px;
@@ -293,6 +349,10 @@ button {
     font-weight: 600;
     font-size: 18px;
     color: $black;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
@@ -316,6 +376,10 @@ button {
   display: none;
 }
 
+.topnav .close_icon {
+  display: none;
+}
+
 .topnav a:hover {
   background: $gayishBlue;
 }
@@ -326,12 +390,25 @@ button {
   }
 
   .topnav img.icon {
-    float: right;
+    //float: right;
     display: block;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity  */
+  }
+
   .topnav.responsive {
     position: absolute;
     top: 0;
@@ -341,13 +418,23 @@ button {
     height: 100%;
 
     flex-direction: column;
+
+    animation: slide-in-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
+
   .topnav.responsive .icon {
+    display: none;
+  }
+
+  .topnav.responsive .close_icon {
+    display: block;
+
     position: absolute;
 
     top: 30px;
     left: 15px;
   }
+
   .topnav.responsive a {
     display: flex;
 
@@ -367,5 +454,18 @@ button {
   }
   .brand_logo {
     margin-left: 25px;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
   }
 }
