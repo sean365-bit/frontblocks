@@ -1,19 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
-/* 
-- Mobile: 375px
-- Desktop: 1440px
-Font size (paragraph): 16px
-
-.kumbh-sans-<uniquifier> {
-  font-family: "Kumbh Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "YOPQ" 300;
-}
-*/
-
 $orange: hsl(26, 100%, 55%);
 $paleOrange: hsl(25, 100%, 94%);
 
@@ -23,7 +8,6 @@ $gayishBlue: hsl(220, 14%, 75%);
 $lightGrayishBlue: hsl(223, 64%, 98%);
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
-// $black: (with 75% opacity for lightbox background): hsl(0, 0%, 0%);
 
 @mixin fontTheme($weight: 400, $size: 12px, $alignment: center) {
   font-family: "Kumbh Sans", sans-serif;
@@ -108,15 +92,11 @@ nav {
 }
 
 .shopping_cart {
-  // border: 3px solid green;
-
   position: relative;
 
   &:hover {
     cursor: pointer;
   }
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .items_in_cart {
@@ -147,12 +127,6 @@ nav {
 .mySlides {
   display: none;
 }
-
-/*
-img {
-  vertical-align: middle;
-}
-  */
 
 /* Slideshow container */
 .slideshow_container {
@@ -237,9 +211,7 @@ button {
 .title {
   color: $darkGrayishBlue;
   font-weight: 600;
-
   text-align: left;
-
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -249,7 +221,6 @@ button {
   color: $black;
   font-weight: 600;
   font-size: 32px;
-
   margin-bottom: 15px;
 }
 
@@ -257,14 +228,12 @@ button {
   text-align: left;
   line-height: 25px;
   color: $darkGrayishBlue;
-
   margin-bottom: 15px;
 }
 
 /* */
 .price_container {
   display: flex;
-
   height: 80px;
 }
 
@@ -335,15 +304,13 @@ button {
 button {
   border: none;
   border-radius: 15px;
-  height: 80px;
+  height: 75px;
 
   background: $orange;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
 
   p {
     font-weight: 600;
@@ -356,7 +323,11 @@ button {
   }
 }
 
-/* mine */
+.addToCartButton {
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
 .topnav {
   background: $white;
   display: flex;
@@ -365,9 +336,7 @@ button {
 .topnav a {
   color: $black;
   font-weight: 600;
-
   font-size: 16px;
-
   padding: 14px 16px;
   text-decoration: none;
 }
@@ -382,6 +351,130 @@ button {
 
 .topnav a:hover {
   background: $gayishBlue;
+}
+
+/* */
+.cart_popup {
+  background: $white;
+  height: 290px;
+  width: 390px;
+
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 150px;
+
+  flex-direction: column;
+
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease, display 0.5s ease;
+
+  /* */
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Visible state */
+.show {
+  opacity: 1;
+  display: flex;
+}
+
+.cart_notification {
+  height: 20%;
+  text-align: left;
+  border-bottom: 1px solid $darkGrayishBlue;
+
+  p {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+}
+
+.cart_body {
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* */
+.cart_body_p {
+  color: $darkGrayishBlue;
+  display: none;
+}
+
+/* add class */
+.show_popup {
+  display: block;
+}
+
+.cart_oder {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout_order {
+  height: 60%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*  hide */
+.hide_popup {
+  display: none;
+}
+
+.product_cart_img {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+}
+
+.paragraph_cart {
+  margin-left: 5px;
+}
+
+.fall_limited,
+.quantity_total {
+  color: $darkGrayishBlue;
+  font-weight: 500;
+}
+
+.totalUSD {
+  color: $black;
+}
+
+.order_popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete_icon {
+  height: 40px;
+  width: 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.checkout_button {
+  height: 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 600px) {
