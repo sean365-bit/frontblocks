@@ -78,6 +78,8 @@ const quantity = document.getElementById("quantity");
 const totalPrice = document.getElementById("totalUSD");
 const deleteButton = document.getElementById("deleteButton");
 const checkoutButton = document.getElementById("checkoutButton");
+const cart_body_p = document.querySelector(".cart_body_p");
+const cartOrder = document.querySelector(".cart_oder");
 
 const decreaseseItem = function () {
   if (counter <= 0) {
@@ -103,28 +105,22 @@ const addToCart = function () {
   itemsInCart.classList.add("show_items_in_cart");
   itemsInCart.innerText = counter;
 
-  hidePopup();
+  showPopup();
   console.log(`The total number of pairs is ${totalNumOfItems} || ${counter}`);
 };
 
-const showPopup = function () {
-  const cart_body_p = document.querySelector(".cart_body_p");
-  cart_body_p.classList.add("show_popup");
-
-  const cartOrder = document.querySelector(".cart_oder");
-  cartOrder.classList.add("hide_popup");
+const hidePopup = function () {
+  cart_body_p.classList.remove("hide_popup");
+  cartOrder.classList.remove("show_popup");
 };
 
-const hidePopup = function () {
-  const cart_body_p = document.querySelector(".cart_body_p");
-  cart_body_p.classList.remove("show_popup");
-
-  const cartOrder = document.querySelector(".cart_oder");
-  cartOrder.classList.remove("hide_popup");
+const showPopup = function () {
+  cart_body_p.classList.add("hide_popup");
+  cartOrder.classList.add("show_popup");
 };
 
 const resetCounter = function () {
-  showPopup();
+  hidePopup();
 
   items.innerText = "0";
   counter = 0;
@@ -153,7 +149,7 @@ shoppingCart.addEventListener("click", () => {
 
 checkoutButton.addEventListener("click", () => {
   console.log("order placed!!!!");
-  showPopup();
+  resetCounter();
 });
 
 deleteButton.addEventListener("click", resetCounter);

@@ -363,18 +363,13 @@ button:hover {
 /* */
 .cart_body_p {
   color: hsl(219, 9%, 45%);
-  display: none;
-}
-
-/* add class */
-.show_popup {
-  display: block;
+  display: flex;
 }
 
 .cart_oder {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -383,6 +378,11 @@ button:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+/* add class */
+.show_popup {
+  display: flex;
 }
 
 /*  hide */

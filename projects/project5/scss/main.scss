@@ -405,19 +405,14 @@ button {
 /* */
 .cart_body_p {
   color: $darkGrayishBlue;
-  display: none;
-}
-
-/* add class */
-.show_popup {
-  display: block;
+  display: flex;
 }
 
 .cart_oder {
   height: 100%;
   width: 100%;
 
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -427,6 +422,11 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+/* add class */
+.show_popup {
+  display: flex;
 }
 
 /*  hide */
