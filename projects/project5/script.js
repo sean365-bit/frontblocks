@@ -153,3 +153,23 @@ checkoutButton.addEventListener("click", () => {
 });
 
 deleteButton.addEventListener("click", resetCounter);
+
+/* slide Gallery */
+const previewImages = document.querySelectorAll(".preview img");
+const thumbnails = document.querySelectorAll(".thumbnails img");
+
+// Set initial active image
+previewImages[0].classList.add("active");
+thumbnails[0].classList.add("active");
+
+thumbnails.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => {
+    // Remove active classes
+    previewImages.forEach((img) => img.classList.remove("active"));
+    thumbnails.forEach((img) => img.classList.remove("active"));
+
+    // Add active to the selected
+    previewImages[index].classList.add("active");
+    thumb.classList.add("active");
+  });
+});
