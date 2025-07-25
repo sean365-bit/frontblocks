@@ -96,17 +96,28 @@ const increaseItem = function () {
 };
 
 /*  */
-const addToCart = function () {
-  const totalNumOfItems = (counter * 125).toFixed(2);
 
-  quantity.innerText = `${counter}  `;
-  totalPrice.innerText = `$${totalNumOfItems}`;
+const addToCart = function () {
+  const unitPrice = 125;
+
+  if (counter <= 0) {
+    quantity.innerText = "0";
+    totalPrice.innerText = "$0.00";
+    itemsInCart.classList.remove("show_items_in_cart");
+    itemsInCart.innerText = "";
+
+    return;
+  }
+
+  const totalPriceValue = (counter * unitPrice).toFixed(2);
+
+  quantity.innerText = `${counter}`;
+  totalPrice.innerText = `$${totalPriceValue}`;
 
   itemsInCart.classList.add("show_items_in_cart");
   itemsInCart.innerText = counter;
 
   showPopup();
-  console.log(`The total number of pairs is ${totalNumOfItems} || ${counter}`);
 };
 
 const hidePopup = function () {
@@ -143,12 +154,9 @@ shoppingCart.addEventListener("click", () => {
   } else {
     cartPopup.classList.add("show");
   }
-
-  console.log("this is the shopping cart");
 });
 
 checkoutButton.addEventListener("click", () => {
-  console.log("order placed!!!!");
   resetCounter();
 });
 

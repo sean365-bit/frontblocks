@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+.checkout_button, .order_popup, .cart_body, button, .discount, .info,
+.price_buttons, .prev,
+.next, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,16 +14,13 @@
 }
 
 body {
-  background-color: hsl(0, 0%, 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: "Kumbh Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 16px;
   text-align: center;
+  background-color: hsl(0, 0%, 100%);
+  flex-direction: column;
   position: relative;
 }
 
@@ -23,24 +28,27 @@ header {
   width: 100%;
 }
 
+main,
+nav {
+  display: flex;
+}
+
 main {
   margin-top: 40px;
   margin-bottom: 30px;
-  display: flex;
   flex-direction: column;
   width: 400px;
 }
 
 nav {
   height: 100px;
-  display: flex;
 }
 
 /* */
 .nav_section {
   display: flex;
-  gap: 15px;
   align-items: center;
+  gap: 15px;
 }
 
 .menu_section {
@@ -53,7 +61,6 @@ nav {
   justify-content: right;
 }
 
-/* */
 .menu_icon {
   margin-left: 15px;
   height: 25px;
@@ -133,9 +140,6 @@ nav {
   user-select: none;
   background: hsl(0, 0%, 100%);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: 0.6s ease;
 }
 
@@ -166,20 +170,12 @@ nav {
 }
 /* info section */
 .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   max-width: 400px;
 }
 
-/* prbtns */
+.info,
 .price_buttons {
-  width: 90%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .title,
@@ -187,7 +183,8 @@ nav {
 .shoe_info,
 .price_container,
 .counter,
-button {
+button,
+.price_buttons {
   width: 90%;
 }
 
@@ -249,9 +246,6 @@ button {
   border-radius: 10px;
   width: 75px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .price_child_two {
@@ -272,7 +266,6 @@ button {
   font-weight: 600;
 }
 
-/* */
 .decrease,
 .increase {
   padding: 15px;
@@ -288,9 +281,6 @@ button {
   border-radius: 15px;
   height: 75px;
   background: hsl(26, 100%, 55%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 button p {
   font-weight: 600;
@@ -317,6 +307,7 @@ button:hover {
   font-size: 16px;
   padding: 14px 16px;
   text-decoration: none;
+  position: relative;
 }
 
 .topnav .icon {
@@ -327,8 +318,19 @@ button:hover {
   display: none;
 }
 
-.topnav a:hover {
-  background: hsl(220, 14%, 75%);
+.topnav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background-color: hsl(26, 100%, 55%);
+  transition: width 0.3s ease;
+}
+
+.topnav a:hover::after {
+  width: 100%;
 }
 
 /* */
@@ -369,9 +371,6 @@ button:hover {
 
 .cart_body {
   height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .cart_body_p {
@@ -423,12 +422,6 @@ button:hover {
   color: hsl(0, 0%, 0%);
 }
 
-.order_popup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .delete_icon {
   height: 40px;
   width: 30px;
@@ -439,9 +432,6 @@ button:hover {
 
 .checkout_button {
   height: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .slide_gallery {
@@ -449,7 +439,7 @@ button:hover {
 }
 
 /* MQ */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .topnav a {
     display: none;
   }
@@ -457,18 +447,31 @@ button:hover {
     display: block;
   }
 }
-@media screen and (max-width: 600px) {
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* */
+@media screen and (max-width: 800px) {
   .modal {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity  */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
   }
   .topnav.responsive {
     position: absolute;
@@ -496,20 +499,7 @@ button:hover {
     margin-top: 100px;
   }
 }
-@keyframes slide-in-left {
-  0% {
-    -webkit-transform: translateX(-1000px);
-    transform: translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-/* */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .menu_section {
     flex-direction: row-reverse;
   }
@@ -590,6 +580,9 @@ button:hover {
   }
   .price_child_two {
     justify-content: left;
+  }
+  .cart_popup {
+    top: 35%;
   }
 }
 
